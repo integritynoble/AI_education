@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import UserMenu from "./UserMenu";
 
 const sections = [
   { id: "hero", label: "Home" },
@@ -70,11 +71,16 @@ export default function StickyNav() {
             >
               Get Started
             </a>
+            <div className="ml-3">
+              <UserMenu />
+            </div>
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            className="lg:hidden p-2 text-heading"
+          {/* Mobile auth + hamburger */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <UserMenu />
+            <button
+              className="p-2 text-heading"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
           >
@@ -86,6 +92,7 @@ export default function StickyNav() {
               )}
             </svg>
           </button>
+          </div>
         </div>
       </nav>
 
